@@ -1,0 +1,60 @@
+.wheel-container {
+    max-width: 700px;
+    max-height: 700px;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+
+    .wheel {
+        transition: 3s all;
+        top: 0;
+        left: 0;
+
+        .svg {
+            display: inline-block;
+            transform: rotate(-90deg);
+            /*setting starting deg point*/
+            background: none;
+            border-radius: 50%;
+
+            .circle {
+                fill: #333;
+            }
+        }
+
+
+        .item {
+            color: black;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            width: 80%;
+        }
+
+        .hole {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20%;
+            height: 20%;
+            background: white;
+            border-radius: 100%;
+        }
+
+    }
+
+    .stoper {
+        height: 35px;
+        width: 30px;
+        background: $color-primary;
+        position: absolute;
+        clip-path: polygon(100% 0, 50% 100%, 0 0);
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -20%);
+    }
+
+}

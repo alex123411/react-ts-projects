@@ -1,0 +1,27 @@
+.items-container {
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 5px;
+
+    input {
+        margin: 15px 0 15px 0;
+        background-color: $color-white;
+        border-radius: 3px;
+    }
+
+    .items-list {
+        width: 100%;
+        padding: 0 5px 0 5px;
+
+        .data-item {
+            inline-size: 95%;
+            overflow-wrap: break-word;
+        }
+    }
+}

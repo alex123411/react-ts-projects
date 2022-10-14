@@ -1,0 +1,54 @@
+// Import Bootstrap and its default variables
+@import 'bootstrap/scss/bootstrap.scss';
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    padding: 3rem;
+    background-color: $color-light-blue;
+}
+
+
+body,
+#root,
+.App {
+    min-height: 100vh;
+    color: #ffff;
+    font-weight: 600;
+}
+
+.App {
+    display: flex;
+}
+
+
+.btn {
+    width: 150px;
+    background: $color-white;
+    color: $color-primary;
+    font-weight: 600;
+    border-width: 3px;
+}
+
+.btn-primary {
+    background: #2C3333;
+    color: white;
+    border: 3px solid white;
+}
+
+.btn-primary:hover {
+    border: 3px solid #2C3333;
+    background: white;
+    color: #2C3333;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    display: none;
+}
