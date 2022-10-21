@@ -1,2 +1,2 @@
 # react-ts-projects
- repository to hole all react-ts projects
+ repository to hold all react-ts projects
