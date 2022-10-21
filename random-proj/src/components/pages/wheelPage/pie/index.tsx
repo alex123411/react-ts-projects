@@ -1,5 +1,4 @@
 import { IPieProps } from 'models/propsModels';
-import { IWheel } from 'models/wheelModels';
 import React, { useEffect, useState } from 'react';
 
 interface styles {
@@ -10,19 +9,19 @@ interface styles {
 import pieScss from './_pie.module.scss'
 
 const Pie = ({ wheel }: IPieProps) => {
-    
+
+    const R = 200
+    const L = 2 * Math.PI * R
+
     const [styles, setStyles] = useState({ background: '', transform: '' } as styles)
     const [numberd, setNumberd] = useState(0)
     const [winner, setWinner] = useState('')
 
     useEffect(() => {
-        
         setStyles({ ...styles, transform: "rotate(" + numberd + "deg)" })
-    }, [numberd]);
+    }, [numberd])
 
-    const R = 200
-    const L = 2 * Math.PI * R
-
+    
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         const newN = numberd + Math.ceil(Math.random() * 10000)
@@ -41,7 +40,7 @@ const Pie = ({ wheel }: IPieProps) => {
     }
 
     return (
-        <div >
+        <div style={{display: wheel.sum? '': 'none'}}>
             <span style={{ color: 'black' }}>{winner}</span>
             <div className={pieScss.wheelContainer + ' d-flex flex-column'}  >
                 <div className={pieScss.wheel + ' w-100'} style={{ transform: styles.transform }}>
@@ -75,7 +74,6 @@ const Pie = ({ wheel }: IPieProps) => {
             <button onClick={handleClick} className='btn btn-primary'>Spin</button>
         </div>
     );
-
 }
 
 export default Pie;

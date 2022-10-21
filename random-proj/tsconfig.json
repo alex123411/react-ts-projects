@@ -20,7 +20,7 @@
       "@public/*": ["public/*"],
       "@assets/*": ["assets/*"],
       "@services/*": ["services/*"],
-
+      "@models/*": ["models/*"]
     }
   },
   "include": ["src"],

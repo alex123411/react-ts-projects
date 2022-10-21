@@ -2,19 +2,26 @@ import React, { useState } from 'react'
 import { IFormProps } from 'models/propsModels'
 
 import AuthService from '@services/AuthService'
+import { IUser, UserRoles } from '@models/userModel'
 
 
-const SignInForm = ({ AddUser }: IFormProps)  => {
-     interface IUser {
-        name: string,
-        email: string,
-        password: string,
-        role: string
-    }
+const SignInForm = ()  => {
+     
     const authService = new AuthService(null)
-
-    const [user, setUser] = useState({ name: '', email: '', password: '', role: '' } as IUser)
+    console.log(UserRoles.USER)
+    const [user, setUser] = useState({ name: '', email: '', password: '', role: UserRoles.ADMIN } as IUser)
     console.log(user)
+
+    const users: IUser[] = [
+
+    ]
+  
+    const AddUser = (user: IUser) => {
+      console.log("FROM PARENT COMPONENT", user)
+      users.push(user)
+      console.log(users)
+    }
+
     const createUser = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
         // AddUser(user)   
